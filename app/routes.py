@@ -31,10 +31,10 @@ def index():
             else:
                 result = bot.place_oco_order(symbol, side, quantity, take_profit, stop_loss)
                 if result:
-                    message = "✅ OCO order placed successfully!"
+                    message = " OCO order placed successfully!"
                     order = result
                 else:
-                    message = "❌ Failed to place OCO order."
+                    message = " Failed to place OCO order."
         else:
             # For other order types
             if order_type == "limit" and price is None:
@@ -44,9 +44,9 @@ def index():
             else:
                 result = bot.place_order(symbol, side, order_type, quantity, price, stop_price)
                 if result:
-                    message = "✅ Order placed successfully!"
+                    message = " Order placed successfully!"
                     order = result
                 else:
-                    message = "❌ Failed to place order."
+                    message = " Failed to place order."
 
     return render_template("index.html", message=message, order=order)

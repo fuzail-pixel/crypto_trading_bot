@@ -2,7 +2,7 @@ import argparse
 from app.bot import BasicBot
 
 def main():
-    print("✅ CLI started")
+    print(" CLI started")
     parser = argparse.ArgumentParser(description="Crypto Trading Bot CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -52,19 +52,19 @@ def main():
             )
 
         if result:
-            print("✅ Order placed successfully:")
+            print("Order placed successfully:")
             print(result)
         else:
-            print("❌ Failed to place order. Check logs for details.")
+            print(" Failed to place order. Check logs for details.")
 
     elif args.command == "status":
         print(f"🔍 Fetching status for order {args.order_id}...")
         result = bot.check_order_status(args.symbol, args.order_id)
         if result:
-            print("📊 Order Status:")
+            print(" Order Status:")
             print(result)
         else:
-            print("❌ Could not fetch order status.")
+            print(" Could not fetch order status.")
 
 if __name__ == "__main__":
     main()
